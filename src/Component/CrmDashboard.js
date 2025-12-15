@@ -8,29 +8,31 @@ import { FaShoppingCart } from "react-icons/fa";
 import { GiEarthAsiaOceania } from "react-icons/gi";
 import { HiGift } from "react-icons/hi";
 import { AiOutlineFullscreen } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import dayjs from "dayjs";
 import React from "react";
 import { LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
-import useMediaQuery from "@mui/material/useMediaQuery";   // ✅ ADDED
+import useMediaQuery from "@mui/material/useMediaQuery"; // ✅ ADDED
 
 const CrmDashboard = () => {
   const [sidebarWidth, setSidebarWidth] = React.useState(240);
   const [selectedDate, setSelectedDate] = React.useState(dayjs());
   const [activeTab, setActiveTab] = React.useState(0);
+  const navigate = useNavigate();
 
   const [showOverview, setShowOverview] = React.useState(true);
   const [showContent, setShowContent] = React.useState(true);
   const [isFullBox, setIsFullBox] = React.useState(false);
 
-  const isSmallScreen = useMediaQuery("(max-width: 768px)");  // ✅ ADDED
+  const isSmallScreen = useMediaQuery("(max-width: 768px)"); // ✅ ADDED
 
   // ✅ FIX: Auto adjust dashboard margin when screen is small
   React.useEffect(() => {
     if (isSmallScreen) {
-      setSidebarWidth(56);  // collapsed width
+      setSidebarWidth(56); // collapsed width
     }
   }, [isSmallScreen]);
 
@@ -142,8 +144,6 @@ const CrmDashboard = () => {
                 }}
               />
             </LocalizationProvider>
-            {/* llll */}
-            {/* mmm */}
 
             <LocalizationProvider dateAdapter={AdapterDayjs}>
               <DatePicker
@@ -226,6 +226,7 @@ const CrmDashboard = () => {
               </Box>
 
               <Box
+                onClick={() => navigate("/MyProfile")}
                 sx={{
                   display: "flex",
                   justifyContent: "space-between",
@@ -234,6 +235,10 @@ const CrmDashboard = () => {
                   backgroundColor: item.bgcolor2,
                   padding: "6px 10px",
                   color: "#fff",
+                  cursor: "pointer", // 👈 important UX
+                  "&:hover": {
+                    opacity: 0.9,
+                  },
                 }}
               >
                 <Typography sx={{ fontSize: 11 }}>VIEW MORE</Typography>
@@ -273,7 +278,8 @@ const CrmDashboard = () => {
             }}
           >
             <Typography sx={{ fontSize: 18 }}>
-              <HiGift style={{ fontSize: 13, marginRight: 5 }} /> Today's Overview
+              <HiGift style={{ fontSize: 13, marginRight: 5 }} /> Today's
+              Overview
             </Typography>
 
             <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
@@ -301,7 +307,8 @@ const CrmDashboard = () => {
               padding: showOverview ? "15px" : "0 15px",
               overflow: "hidden",
               opacity: showOverview ? 1 : 0,
-              transition: "height 0.45s ease, padding 0.45s ease, opacity 0.45s ease",
+              transition:
+                "height 0.45s ease, padding 0.45s ease, opacity 0.45s ease",
               backgroundColor: "#fff",
             }}
           >
@@ -325,8 +332,7 @@ const CrmDashboard = () => {
                         gap: 1,
                         padding: "10px 15px",
                         cursor: "pointer",
-                        border:
-                          activeTab === index ? "1px solid #ccc" : "none",
+                        border: activeTab === index ? "1px solid #ccc" : "none",
                         borderBottom:
                           activeTab === index ? "none" : "1px solid #ccc",
                         borderTopLeftRadius: 2,
@@ -356,7 +362,11 @@ const CrmDashboard = () => {
                 </Box>
 
                 <Box
-                  sx={{ fontSize: 14, padding: "8px", border: "1px solid #ccc" }}
+                  sx={{
+                    fontSize: 14,
+                    padding: "8px",
+                    border: "1px solid #ccc",
+                  }}
                 >
                   No Records Found
                 </Box>

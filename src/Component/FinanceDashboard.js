@@ -9,6 +9,7 @@ import { GiEarthAsiaOceania } from "react-icons/gi";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import { HiGift } from "react-icons/hi";
+import { useNavigate } from "react-router-dom";
 import { AiOutlineFullscreen } from "react-icons/ai";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
@@ -17,7 +18,7 @@ import React from "react";
 import { LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
-import useMediaQuery from "@mui/material/useMediaQuery";   // ✅ ADDED
+import useMediaQuery from "@mui/material/useMediaQuery"; // ✅ ADDED
 
 const FinanceDashboard = () => {
   const [sidebarWidth, setSidebarWidth] = React.useState(240);
@@ -27,8 +28,9 @@ const FinanceDashboard = () => {
   const [showOverview, setShowOverview] = React.useState(true);
   const [showContent, setShowContent] = React.useState(true);
   const [isFullBox, setIsFullBox] = React.useState(false);
+  const navigate = useNavigate();
 
-  const isSmallScreen = useMediaQuery("(max-width: 768px)");  // ✅ Detect small screens
+  const isSmallScreen = useMediaQuery("(max-width: 768px)"); // ✅ Detect small screens
 
   // ✅ Auto adjust width when screen is small (same fix as CRM Dashboard)
   React.useEffect(() => {
@@ -236,6 +238,7 @@ const FinanceDashboard = () => {
               </Box>
 
               <Box
+                onClick={() => navigate("/MyProfile")}
                 sx={{
                   display: "flex",
                   justifyContent: "space-between",
@@ -244,6 +247,10 @@ const FinanceDashboard = () => {
                   backgroundColor: item.bgcolor2,
                   padding: "6px 10px",
                   color: "#fff",
+                  cursor: "pointer", // 👈 important UX
+                  "&:hover": {
+                    opacity: 0.9,
+                  },
                 }}
               >
                 <Typography sx={{ fontSize: 11 }}>VIEW MORE</Typography>
@@ -284,7 +291,8 @@ const FinanceDashboard = () => {
             }}
           >
             <Typography sx={{ fontSize: 18 }}>
-              <HiGift style={{ fontSize: 13, marginRight: 5 }} /> Today's Overview
+              <HiGift style={{ fontSize: 13, marginRight: 5 }} /> Today's
+              Overview
             </Typography>
 
             <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
@@ -375,8 +383,7 @@ const FinanceDashboard = () => {
                       padding: "10px 15px",
                       cursor: "pointer",
                       border: activeTab === 6 ? "1px solid #ccc" : "none",
-                      borderBottom:
-                        activeTab === 6 ? "none" : "1px solid #ccc",
+                      borderBottom: activeTab === 6 ? "none" : "1px solid #ccc",
                       borderTopLeftRadius: 2,
                       borderTopRightRadius: 2,
                     }}
@@ -433,9 +440,7 @@ const FinanceDashboard = () => {
                 </Box>
 
                 {/* CONTENT BOX */}
-                {(activeTab === 2 ||
-                  activeTab === 3 ||
-                  activeTab === 4) && (
+                {(activeTab === 2 || activeTab === 3 || activeTab === 4) && (
                   <Box
                     sx={{
                       fontSize: 14,
