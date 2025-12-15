@@ -69,7 +69,7 @@ const Navbar = () => {
               }}
             >
               <Typography sx={{ fontSize: "16px", fontWeight: 600 }}>
-                TURANT TM
+                TURANT TMdddddd
               </Typography>
 
               <Tooltip title="Open settings">
