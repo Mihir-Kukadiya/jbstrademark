@@ -96,7 +96,7 @@ export default function Quotation() {
             }}
             onClick={() => setShowForm(true)}
           >
-            Add New Sale Invoice
+            Add New Quotation
           </Button>
 
           <Box
