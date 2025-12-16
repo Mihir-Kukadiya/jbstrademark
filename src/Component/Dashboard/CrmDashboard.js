@@ -102,7 +102,7 @@ const CrmDashboard = () => {
           p: 2,
           ml: `${sidebarWidth}px`,
           transition: "all 0.3s ease",
-          mt: "64px",
+          mt: "164px",
         }}
       >
         {/* HEADER */}

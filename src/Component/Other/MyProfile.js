@@ -19,7 +19,6 @@ const Profile = () => {
           minHeight: "calc(100vh - 64px)",
           display: "flex",
           justifyContent: "center",
-          // hjk
           flexDirection: { xs: "column", md: "row" },
           alignItems: "center",
           backgroundColor: "#f8f8f8",
