@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Box, Typography, TextField, IconButton, Paper } from "@mui/material";
-import Sidebar from "../Global/Sidebar";
+import Sidebar from "../../Global/Sidebar";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 const bgImages = [

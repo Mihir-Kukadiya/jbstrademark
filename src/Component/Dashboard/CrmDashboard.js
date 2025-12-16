@@ -1,5 +1,5 @@
 import { Box, Typography } from "@mui/material";
-import Sidebar from "../Global/Sidebar";
+import Sidebar from "../../Global/Sidebar";
 import Button from "@mui/material/Button";
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
 import { FaComments } from "react-icons/fa";

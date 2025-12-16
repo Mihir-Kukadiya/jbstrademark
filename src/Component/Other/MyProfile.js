@@ -7,7 +7,7 @@ import {
   InputAdornment,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
-import Sidebar from "../Global/Sidebar";
+import Sidebar from "../../Global/Sidebar";
 
 const Profile = () => {
   const [sidebarWidth, setSidebarWidth] = React.useState(240);
@@ -19,6 +19,7 @@ const Profile = () => {
           minHeight: "calc(100vh - 64px)",
           display: "flex",
           justifyContent: "center",
+          // hjk
           flexDirection: { xs: "column", md: "row" },
           alignItems: "center",
           backgroundColor: "#f8f8f8",

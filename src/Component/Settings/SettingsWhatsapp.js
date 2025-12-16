@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Button, Container, TextField } from "@mui/material";
-import Sidebar from "../Global/Sidebar";
+import Sidebar from "../../Global/Sidebar";
 
 const Whatsapp = () => {
   const [sidebarWidth, setSidebarWidth] = React.useState(240);

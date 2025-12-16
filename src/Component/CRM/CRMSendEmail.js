@@ -10,7 +10,7 @@ import {
   Paper,
   Typography,
 } from "@mui/material";
-import Sidebar from "../Global/Sidebar";
+import Sidebar from "../../Global/Sidebar";
 import SearchIcon from "@mui/icons-material/Search";
 import CodeIcon from "@mui/icons-material/Code";
 import SaveIcon from "@mui/icons-material/Save";

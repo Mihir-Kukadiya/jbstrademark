@@ -19,7 +19,7 @@ import {
   Pagination,
   Typography,
 } from "@mui/material";
-import Sidebar from "../Global/Sidebar";
+import Sidebar from "../../Global/Sidebar";
 import { ArrowDropDown } from "@mui/icons-material";
 
 const Entrylogs = () => {

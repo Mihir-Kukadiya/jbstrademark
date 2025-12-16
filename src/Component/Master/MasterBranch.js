@@ -13,7 +13,7 @@ import {
   TableRow,
   Paper,
 } from "@mui/material";
-import Sidebar from "../Global/Sidebar";
+import Sidebar from "../../Global/Sidebar";
 
 const Branch = () => {
   const [branches, setBranches] = useState([

@@ -18,7 +18,7 @@ import {
 } from "@mui/material";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import SearchIcon from "@mui/icons-material/Search";
-import Sidebar from "../Global/Sidebar";
+import Sidebar from "../../Global/Sidebar";
 
 const TaskPage = () => {
   const [showForm, setShowForm] = useState(false);
