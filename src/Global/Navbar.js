@@ -77,7 +77,7 @@ const Navbar = () => {
                   <Avatar
                     sx={{ height: 29, width: 29, mr: 1 }}
                     alt="User"
-                    src="/static/images/avatar/2.jpg"
+                    src="https://admin.madaliya.com/Photos/default_image.png"
                   />
                   <Typography
                     sx={{

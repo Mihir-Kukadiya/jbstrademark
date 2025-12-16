@@ -129,65 +129,6 @@ const FinanceDashboard = () => {
           <Typography sx={{ fontSize: 28, color: "#666", fontWeight: 300 }}>
             Dashboard
           </Typography>
-
-          {/* DATE FILTERS */}
-          <Box
-            sx={{
-              display: "flex",
-              flexWrap: "wrap",
-              gap: 2,
-              justifyContent: { xs: "flex-start", md: "flex-end" },
-            }}
-          >
-            <LocalizationProvider dateAdapter={AdapterDayjs}>
-              <DatePicker
-                value={selectedDate}
-                format="YYYY/MM/DD"
-                onChange={(newValue) => setSelectedDate(newValue)}
-                slotProps={{
-                  textField: {
-                    sx: {
-                      height: 40,
-                      width: { xs: "100%", sm: 150 },
-                      "& .MuiInputBase-root": { height: 40, fontSize: 14 },
-                      "& .MuiInputBase-input": { padding: "8px 12px" },
-                    },
-                    size: "small",
-                  },
-                }}
-              />
-            </LocalizationProvider>
-
-            <LocalizationProvider dateAdapter={AdapterDayjs}>
-              <DatePicker
-                value={selectedDate}
-                format="YYYY/MM/DD"
-                onChange={(newValue) => setSelectedDate(newValue)}
-                slotProps={{
-                  textField: {
-                    sx: {
-                      height: 40,
-                      width: { xs: "100%", sm: 150 },
-                      "& .MuiInputBase-root": { height: 40, fontSize: 14 },
-                      "& .MuiInputBase-input": { padding: "8px 12px" },
-                    },
-                    size: "small",
-                  },
-                }}
-              />
-            </LocalizationProvider>
-
-            <Button
-              variant="contained"
-              sx={{
-                backgroundColor: "#E12330",
-                height: 40,
-                width: { xs: "100%", sm: "auto" },
-              }}
-            >
-              Search
-            </Button>
-          </Box>
         </Box>
 
         {/* BANNERS */}

@@ -11,16 +11,20 @@ import { AiOutlineFullscreen } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import dayjs from "dayjs";
-import React from "react";
+import React, { useState } from "react";
 import { LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
-import useMediaQuery from "@mui/material/useMediaQuery"; // ✅ ADDED
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 const CrmDashboard = () => {
   const [sidebarWidth, setSidebarWidth] = React.useState(240);
   const [selectedDate, setSelectedDate] = React.useState(dayjs());
+  const [selectedForwardDate, setSelectedForwardDate] = useState(
+    dayjs().add(7, "day")
+  );
   const [activeTab, setActiveTab] = React.useState(0);
+
   const navigate = useNavigate();
 
   const [showOverview, setShowOverview] = React.useState(true);
@@ -147,9 +151,9 @@ const CrmDashboard = () => {
 
             <LocalizationProvider dateAdapter={AdapterDayjs}>
               <DatePicker
-                value={selectedDate}
+                value={selectedForwardDate}
                 format="YYYY/MM/DD"
-                onChange={(newValue) => setSelectedDate(newValue)}
+                onChange={(newValue) => setSelectedForwardDate(newValue)}
                 slotProps={{
                   textField: {
                     sx: {
